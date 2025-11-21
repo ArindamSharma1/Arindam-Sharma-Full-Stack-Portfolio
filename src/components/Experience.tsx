@@ -20,7 +20,7 @@ const experiences = [
   {
     company: 'Freelanced',
     role: 'Web Developer and UI/UX Designer',
-    duration: 'June 2022 - Present',
+    duration: 'June 2021 - Present',
     description: 'Building responsive web applications and designing user experiences. Implemented interactive features using modern JavaScript frameworks.',
     skills: ['React', 'CSS', 'HTML5', 'JavaScript', 'Figma'],
   },
