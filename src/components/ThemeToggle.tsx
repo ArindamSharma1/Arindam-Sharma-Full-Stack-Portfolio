@@ -1,35 +1,35 @@
-import { useEffect, useState } from 'react'
-import { Sun, Moon } from 'lucide-react' // optional icons (npm install lucide-react)
+import { useEffect, useState } from "react";
 
-const ThemeToggle = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (localStorage.getItem('theme')) {
-      return localStorage.getItem('theme') as 'light' | 'dark'
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  })
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    const root = window.document.documentElement
-    if (theme === 'dark') {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
-    localStorage.setItem('theme', theme)
-  }, [theme])
+    const storedTheme = localStorage.getItem("theme");
 
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light')
+    if (storedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setTheme("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    }
+  };
 
   return (
     <button
       onClick={toggleTheme}
-      className="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg hover:bg-accent-dark transition-all duration-300"
-      aria-label="Toggle Theme"
+      className="px-3 py-2 rounded-md border border-slate-300 dark:border-slate-700 text-sm transition-all hover:opacity-80"
     >
-      {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+      {theme === "light" ? "Dark Mode" : "Light Mode"}
     </button>
-  )
+  );
 }
-
-export default ThemeToggle

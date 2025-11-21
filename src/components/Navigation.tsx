@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Instagram } from 'lucide-react';
 import { useScrollSection } from '../hooks/useScrollSection';
+// import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { id: 'home', label: 'Home' },
@@ -28,26 +29,37 @@ export const Navigation = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100"
+      className="fixed top-0 left-0 right-0 z-50 
+      bg-white/80 dark:bg-black/80 
+      backdrop-blur-md 
+      border-b border-slate-100 dark:border-white/10 
+      transition-colors duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="section-max-width section-padding py-4">
         <div className="flex items-center justify-between">
+
+          {/* Logo */}
           <motion.div
-            className="text-2xl font-bold text-slate-900"
+            className="text-2xl font-bold text-slate-900 dark:text-white"
             whileHover={{ scale: 1.05 }}
           >
             As.
           </motion.div>
 
+          {/* Nav links */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`nav-link ${activeSection === item.id ? 'active text-accent' : ''}`}
+                className={`nav-link ${
+                  activeSection === item.id 
+                    ? 'active text-accent dark:text-accent' 
+                    : 'text-slate-700 dark:text-slate-300'
+                }`}
                 whileHover={{ y: -2 }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -58,6 +70,7 @@ export const Navigation = () => {
             ))}
           </div>
 
+          {/* Social + Theme Toggle */}
           <div className="flex items-center gap-4">
             {socials.map((social, index) => {
               const Icon = social.icon;
@@ -66,18 +79,20 @@ export const Navigation = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-slate-700 hover:text-accent transition-colors"
+                  className="text-slate-700 dark:text-slate-300 hover:text-accent transition-colors"
                   whileHover={{ scale: 1.2, rotate: 12 }}
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
-                  target={social.target} /* pass target, e.g. "_blank" */
-                  rel={social.target === '_blank' ? 'noopener noreferrer' : undefined} /* security for new tabs */
+                  target={social.target}
+                  rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
                 >
                   <Icon size={20} />
                 </motion.a>
               );
             })}
+
+            {/* <ThemeToggle /> */}
           </div>
         </div>
       </div>

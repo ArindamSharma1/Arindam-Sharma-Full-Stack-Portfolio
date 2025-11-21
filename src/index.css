@@ -11,6 +11,14 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  background-color: white;
+  color: #0f172a;
+}
+
+/* Dark theme base */
+html.dark body {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 @layer base {
@@ -37,19 +45,25 @@ body {
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 
+    dark:from-white dark:via-slate-200 dark:to-white 
+    bg-clip-text text-transparent;
   }
 
   .button-primary {
-    @apply px-8 py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95;
+    @apply px-8 py-3 bg-accent hover:bg-accent-dark text-white 
+    font-semibold rounded-lg transition-all duration-300 
+    transform hover:scale-105 active:scale-95;
   }
 
   .button-ghost {
-    @apply px-6 py-2 text-slate-700 hover:text-accent transition-colors duration-300;
+    @apply px-6 py-2 text-slate-700 dark:text-slate-300 
+    hover:text-accent transition-colors duration-300;
   }
 
   .nav-link {
-    @apply relative text-slate-700 hover:text-accent transition-colors duration-300 text-sm font-medium;
+    @apply relative text-slate-700 dark:text-slate-300 
+    hover:text-accent transition-colors duration-300 text-sm font-medium;
   }
 
   .nav-link::after {
@@ -62,7 +76,9 @@ body {
   }
 
   .tech-icon {
-    @apply p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-110 bg-slate-50;
+    @apply p-4 rounded-lg hover:shadow-lg transition-all duration-300 
+    transform hover:scale-110 
+    bg-slate-50 dark:bg-neutral-900;
   }
 
   .scroll-fade-in {
@@ -83,7 +99,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-100;
+  @apply bg-slate-100 dark:bg-black;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -94,7 +110,12 @@ body {
   @apply bg-accent-dark;
 }
 
-/* Custom cursor hide */
+/* Hide default cursor */
 * {
   cursor: none !important;
+}
+
+/* Smooth theme transition */
+html, body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

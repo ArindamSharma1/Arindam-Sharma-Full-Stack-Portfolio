@@ -10,7 +10,7 @@ export default {
       },
       colors: {
         accent: '#38BDF8',
-        'accent-dark': '#38BDF8',
+        'accent-dark': '#0284c7',
         'accent-light': '#38BDF8',
       },
       fontSize: {
