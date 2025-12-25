@@ -64,7 +64,7 @@ export const Hero = () => {
     <section
       id="home"
       data-section="home"
-      className="pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen flex items-center"
+      className="pt-24 pb-20 md:pt-28 md:pb-32 min-h-screen flex items-center"
     >
       <div className="section-max-width w-full section-padding">
         <motion.div
@@ -73,7 +73,7 @@ export const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <div className="space-y-6">
+          <div className="space-y-4">
             <motion.div
               className="inline-block px-4 py-2 bg-accent/10 rounded-full"
               variants={itemVariants}
