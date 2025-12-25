@@ -9,73 +9,69 @@ const projects = [
 		tech: [
 			'React',
 			'FastAPI',
-			'Supabase',
+			'Supabase Auth',
+			'RLS',
 			'PostgreSQL',
 			'GSAP',
-			'Vite',
 		],
 		description:
-			'FolioGauge is automated critique system, elevating portfolio analysis into the AI-driven era.',
+			'Automated portfolio critique system leveling the playing field for students. Orchestrates AI analysis via FastAPI with student/recruiter flows secured by Supabase Auth and RLS.',
 		demo: 'https://folio-gauge.vercel.app/',
 		repo: 'https://github.com/ArindamSharma1/FolioGauge',
+	},
+	{
+		title: 'Learn Vista-Moodle LMS',
+		image: '/projects/learn-vista.png',
+		tech: ['React', 'Moodle API', 'JWT Auth', 'i18n', 'CSS'],
+		description:
+			'Custom frontend interface for Moodle LMS. Optimized for accessibility and multi-language support (i18n) to lower the barrier of entry for diverse student usage.',
+		// demo: 'https://example.com/learn-vista',
+		repo: 'https://github.com/ArindamSharma1/learn-vista',
+	},
+	{
+		title: 'JYC-JUIT Youth Club Website',
+		image: '/projects/jyc-juit.png',
+		tech: ['React', 'REST APIs', 'RBAC', 'Chart.js', 'Tailwind'],
+		description:
+			'University club management platform handling high-volume event registrations. Implemented role-based access control (RBAC) regarding admin dashboard data protection.',
+		demo: 'https://jyc.co.in/',
+		// repo: 'https://github.com/yourusername/jyc-juit',
 	},
 	{
 		title: 'Quantum QR',
 		image: '/projects/Quantum-QR-1.png',
 		tech: [
 			'React',
-			'JavaScript',
 			'Vite',
-			'Framer Motion',
-			'CSS',
-			'API Integration',
+			'Canvas API',
+			'CSS Modules',
 		],
 		description:
-			'Free QR code generator with customizable designs and real-time preview.',
+			'High-performance, privacy-first QR generator. Zero-dependency architecture focused on client-side generation speed and pure CSS layout.',
 		demo: 'https://quantum-qr-gold.vercel.app/',
 		repo: 'https://github.com/ArindamSharma1/Quantum-QR',
-	},
-	{
-		title: 'JYC-JUIT Youth Club Website',
-		image: '/projects/jyc-juit.png',
-		tech: ['React', 'Chart.js', 'API Integration', 'Tailwind CSS', 'REST APIs'],
-		description:
-			'Helped creating official website for JUIT Youth Club featuring event management, member profiles, and activity tracking.',
-		demo: 'https://jyc.co.in/',
-		// repo: 'https://github.com/yourusername/jyc-juit',
-	},
-	{
-		title: 'Learn Vista-Moodle LMS',
-		image: '/projects/learn-vista.png',
-		tech: ['React', 'JavaScript', 'CSS', 'API Integration'],
-		description:
-			'A Moodle LMS student portal with integrated with multiple languages support.',
-		// demo: 'https://example.com/learn-vista',
-		repo: 'https://github.com/ArindamSharma1/learn-vista',
 	},
 	{
 		title: 'Maintaining University Website',
 		image: '/projects/juit.png',
 		tech: [
 			'React',
-			'API',
-			'Geolocation',
-			'Tailwind CSS',
-			'PWA',
 			'Service Workers',
-			'IndexedDB',
+			'Caching Strategies',
+			'PWA',
+			'Geolocation',
 		],
 		description:
-			'Helped maintain the university website by updating content and improving user experience.',
+			'Maintained core infrastructure for high-traffic university portal. Deployed Service Workers and caching strategies to ensure uptime during result declaration surges.',
 		demo: 'https://www.juit.ac.in/',
 		// repo: 'https://github.com/yourusername/university-site',
 	},
 	{
 		title: 'Framer Portfolio',
 		image: '/projects/framer-portfolio.png',
-		tech: ['Framer', 'Framer Motion', 'Spline', 'Responsive Design', 'Animations'],
+		tech: ['Framer Motion', 'Spline', 'Performance Optimization', 'Responsive'],
 		description:
-			'A portfolio website built with Framer, showcasing projects with dynamic content and smooth animations.',
+			'Modern design showcase with complex orchestrations. Focused on rendering performance and smooth layout thrashing avoidance.',
 		demo: 'https://arindam-sharma.framer.website/',
 		// repo: 'https://github.com/yourusername/framer-portfolio',
 	},
@@ -113,10 +109,7 @@ const ProjectCard = ({
 					className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 				/>
 
-				<div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-					<h3 className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-2">
-						{project.title}
-					</h3>
+				<div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 pt-8">
 					<p className="text-slate-200 text-sm mb-4 flex-shrink-0">
 						{project.description}
 					</p>
