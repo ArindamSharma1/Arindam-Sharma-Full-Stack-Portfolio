@@ -2,36 +2,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Briefcase, Calendar } from 'lucide-react';
 
-const experiences = [
-    {
-        company: 'ApexPlanet Technologies',
-        role: 'Frontend Developer Intern',
-        duration: 'June 2025 - July 2025',
-        description: 'Worked as Frontend development intern, developing high-performance web applications with focus on user experience and performance optimization.',
-        skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SAP Animate'],
-    },
-    {
-        company: 'Technical Club JYC-JUIT',
-        role: 'Frontend Developer',
-        duration: 'Oct 2023 - Nov 2024',
-        description: 'Developed responsive web applications for my university\'s technical club. Optimized performance and maintained code quality.',
-        skills: ['React', 'JavaScript', 'SCSS', 'Webpack', 'Git'],
-    },
-    {
-        company: 'Freelanced',
-        role: 'Web Developer and UI/UX Designer',
-        duration: 'June 2021 - Present',
-        description: 'Building responsive web applications and designing user experiences. Implemented interactive features using modern JavaScript frameworks.',
-        skills: ['React', 'CSS', 'HTML5', 'JavaScript', 'Figma'],
-    },
-    // {
-    //   company: 'Branex IT',
-    //   role: 'Web Developer Intern',
-    //   duration: 'Jan 2023 - Apr 2023',
-    //   description: 'Contributed to various web projects, learning industry best practices and collaborating with experienced developers.',
-    //   skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'MySQL'],
-    // },
-];
+import { EXPERIENCES } from '../constants';
+
+const experiences = EXPERIENCES;
 
 export const Experience = () => {
     const { ref, inView } = useInView({

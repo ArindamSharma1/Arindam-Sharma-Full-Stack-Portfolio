@@ -8,7 +8,7 @@ export default function CustomCursor() {
   const pos = useRef({ x: 0, y: 0 });
   const target = useRef({ x: 0, y: 0 });
 
-  const speed = 0.15; // lower = smoother
+  const speed = 0.15;
 
   useEffect(() => {
     const handleMove = (e: MouseEvent) => {
@@ -64,10 +64,10 @@ export default function CustomCursor() {
       style={{
         width: hovering ? "40px" : "18px",
         height: hovering ? "40px" : "18px",
-        backgroundColor: "#ff7849",          // tangerine
-        border: "1.5px solid #ff6b4a",       // tangerine hover
+        backgroundColor: "#ff7849",
+        border: "1.5px solid #ff6b4a",
         borderRadius: "9999px",
-        opacity: 0.9                         // subtle softness
+        opacity: 0.9
       }}
     />
   );

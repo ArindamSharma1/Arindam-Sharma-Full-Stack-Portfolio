@@ -1,29 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Shield, Lock, Server, Activity } from 'lucide-react';
+import { SYSTEMS } from '../constants';
 
-const systems = [
-    {
-        title: 'Authentication & Identity',
-        icon: <Shield className="w-6 h-6 text-secondary" />,
-        content: 'Engineered secure identity management using Supabase Auth and Google OAuth. Implemented rigid JWT session handling to maintain user integrity across distributed client-server interactions.',
-    },
-    {
-        title: 'Access Control & Limits',
-        icon: <Lock className="w-6 h-6 text-secondary" />,
-        content: 'Architected granular Row Level Security (RLS) policies and Role-Based Access Control (RBAC). Enforced strict per-user scan limits and admin-only privileges to prevent resource abuse.',
-    },
-    {
-        title: 'Backend Architecture',
-        icon: <Server className="w-6 h-6 text-secondary" />,
-        content: 'Designed a decoupled FastAPI microservices layer with protected API endpoints. Separated frontend logic from backend processing to ensure scalable, secure data orchestration.',
-    },
-    {
-        title: 'Performance & Safety',
-        icon: <Activity className="w-6 h-6 text-secondary" />,
-        content: 'Implemented intelligent rate limiting and resource governing mechanisms. Built the architecture to handle concurrent traffic spikes while strictly enforcing usage quotes.',
-    },
-];
+const systems = SYSTEMS;
 
 const SystemCard = ({ system, index }: { system: (typeof systems)[0]; index: number }) => {
     const containerVariants = {

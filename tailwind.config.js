@@ -61,6 +61,10 @@ export default {
       },
       transitionTimingFunction: {
         smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        standard: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      },
+      transitionDuration: {
+        DEFAULT: '500ms',
       },
     },
   },

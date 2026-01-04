@@ -12,7 +12,7 @@ import { SystemDesign } from './components/SystemDesign';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import CustomCursor from "./components/CustomCursor";
-// import { ScrollToTop } from './components/ScrollToTop';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   useEffect(() => {
@@ -55,7 +55,7 @@ function App() {
       <SystemDesign />
       <Contact />
       <Footer />
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
     </div>
   );
 }

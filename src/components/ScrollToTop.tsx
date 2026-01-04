@@ -1,43 +1,47 @@
-import { useEffect, useState } from "react";
-import { ArrowUp } from "lucide-react";
-import Lenis from "lenis";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUp } from 'lucide-react';
 
 export const ScrollToTop = () => {
-  const [visible, setVisible] = useState(false);
-  const [lenis, setLenis] = useState<Lenis | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Grab existing Lenis instance from window (set in App.tsx)
-    const lenisInstance = (window as any).lenis as Lenis;
-    if (lenisInstance) setLenis(lenisInstance);
-
     const toggleVisibility = () => {
-      if (window.scrollY > 400) setVisible(true);
-      else setVisible(false);
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
-    if (lenis) {
-      lenis.scrollTo(0); // ✅ Use Lenis' native smooth scroll
-    } else {
-      // fallback if Lenis not available
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
-    <button
-      onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-accent text-white shadow-lg transition-all duration-300 hover:bg-accent-dark hover:scale-110 active:scale-95 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
-      aria-label="Scroll to top"
-    >
-      <ArrowUp className="w-5 h-5" />
-    </button>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 p-3 rounded-full bg-accent text-white shadow-lg shadow-accent/20 z-40 hover:bg-accent-hover transition-colors"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp size={24} />
+        </motion.button>
+      )}
+    </AnimatePresence>
   );
 };

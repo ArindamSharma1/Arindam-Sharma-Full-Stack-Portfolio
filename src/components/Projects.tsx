@@ -2,80 +2,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github } from 'lucide-react';
 
-const projects = [
-	{
-		title: 'Folio Gauge - AI Powered Portfolio Analyzer',
-		image: '/projects/Folio-Gauge.png',
-		tech: [
-			'React',
-			'FastAPI',
-			'Supabase Auth',
-			'RLS',
-			'PostgreSQL',
-			'GSAP',
-		],
-		description:
-			'Automated portfolio critique system leveling the playing field for students. Orchestrates AI analysis via FastAPI with student/recruiter flows secured by Supabase Auth and RLS.',
-		demo: 'https://folio-gauge.vercel.app/',
-		repo: 'https://github.com/ArindamSharma1/FolioGauge',
-	},
-	{
-		title: 'Learn Vista-Moodle LMS',
-		image: '/projects/learn-vista.png',
-		tech: ['React', 'Moodle API', 'JWT Auth', 'i18n', 'CSS'],
-		description:
-			'Custom frontend interface for Moodle LMS. Optimized for accessibility and multi-language support (i18n) to lower the barrier of entry for diverse student usage.',
-		// demo: 'https://example.com/learn-vista',
-		repo: 'https://github.com/ArindamSharma1/learn-vista',
-	},
-	{
-		title: 'JYC-JUIT Youth Club Website',
-		image: '/projects/jyc-juit.png',
-		tech: ['React', 'REST APIs', 'RBAC', 'Chart.js', 'Tailwind'],
-		description:
-			'University club management platform handling high-volume event registrations. Implemented role-based access control (RBAC) regarding admin dashboard data protection.',
-		demo: 'https://jyc.co.in/',
-		// repo: 'https://github.com/yourusername/jyc-juit',
-	},
-	{
-		title: 'Quantum QR',
-		image: '/projects/Quantum-QR-1.png',
-		tech: [
-			'React',
-			'Vite',
-			'Canvas API',
-			'CSS Modules',
-		],
-		description:
-			'High-performance, privacy-first QR generator. Zero-dependency architecture focused on client-side generation speed and pure CSS layout.',
-		demo: 'https://quantum-qr-gold.vercel.app/',
-		repo: 'https://github.com/ArindamSharma1/Quantum-QR',
-	},
-	{
-		title: 'Maintaining University Website',
-		image: '/projects/juit.png',
-		tech: [
-			'React',
-			'Service Workers',
-			'Caching Strategies',
-			'PWA',
-			'Geolocation',
-		],
-		description:
-			'Maintained core infrastructure for high-traffic university portal. Deployed Service Workers and caching strategies to ensure uptime during result declaration surges.',
-		demo: 'https://www.juit.ac.in/',
-		// repo: 'https://github.com/yourusername/university-site',
-	},
-	{
-		title: 'Framer Portfolio',
-		image: '/projects/framer-portfolio.png',
-		tech: ['Framer Motion', 'Spline', 'Performance Optimization', 'Responsive'],
-		description:
-			'Modern design showcase with complex orchestrations. Focused on rendering performance and smooth layout thrashing avoidance.',
-		demo: 'https://arindam-sharma.framer.website/',
-		// repo: 'https://github.com/yourusername/framer-portfolio',
-	},
-];
+import { PROJECTS } from '../constants';
+
+const projects = PROJECTS;
 
 const ProjectCard = ({
 	project,

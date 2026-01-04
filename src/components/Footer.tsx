@@ -1,12 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, Linkedin, Instagram, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { SOCIALS } from '../constants';
 
-const socials = [
-  { icon: Github, href: 'https://www.github.com/ArindamSharma1', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/arindam-sharma-ab4712251/', label: 'LinkedIn' },
-  { icon: Instagram, href: 'https://www.instagram.com/arindam._.sharma/', label: 'Instagram' },
-];
+const socials = SOCIALS;
 
 export const Footer = () => {
   const { ref, inView } = useInView({

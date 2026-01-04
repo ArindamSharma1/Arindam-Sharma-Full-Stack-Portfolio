@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { link } from 'framer-motion/client';
+import { HERO_STATS } from '../constants';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -98,8 +99,17 @@ export const Hero = () => {
             <motion.a
               className="button-primary flex items-center gap-2 group w-fit"
               variants={itemVariants}
-              whileHover={{ x: 10 }}
+              whileHover={{ x: 10, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              animate={{
+                boxShadow: ['0 0 0 0 rgba(255, 120, 73, 0)', '0 0 0 10px rgba(255, 120, 73, 0)'],
+              }}
+              transition={{
+                boxShadow: {
+                  duration: 1.5,
+                  repeat: Infinity,
+                }
+              }}
               href="/projects/Arindam_Sharma_Resume_C.pdf"
               download="Arindam_Sharma_Resume_C.pdf"
               target="_blank"
@@ -115,9 +125,9 @@ export const Hero = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12"
             variants={containerVariants}
           >
-            <StatCard end={4} label="Years of Experience" />
-            <StatCard end={9} label="Completed Projects" />
-            <StatCard end={15} label="Hours Worked" />
+            {HERO_STATS.map((stat) => (
+              <StatCard key={stat.label} end={stat.end} label={stat.label} />
+            ))}
           </motion.div>
         </motion.div>
       </div>

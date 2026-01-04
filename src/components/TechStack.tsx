@@ -1,66 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import {
-  Code2,
-  Database,
-  Server,
-  Wrench,
-  Zap,
-  Layers,
-  Package,
-  Settings,
-} from 'lucide-react';
+import { TECH_CATEGORIES } from '../constants';
 
-const techCategories = [
-  {
-    name: 'Frontend',
-    techs: [
-      { name: 'JavaScript (ES6+)', icon: Code2 },
-      { name: 'TypeScript', icon: Code2 },
-      { name: 'React', icon: Zap },
-      { name: 'Next.js', icon: Layers },
-      { name: 'Angular', icon: Zap },
-      { name: 'Tailwind CSS', icon: Wrench },
-      { name: 'SASS / SCSS', icon: Wrench },
-      { name: 'GSAP', icon: Package },
-      { name: 'Framer Motion', icon: Zap },
-    ],
-  },
-  {
-    name: 'Backend',
-    techs: [
-      { name: 'Node.js', icon: Server },
-      { name: 'Express.js', icon: Server },
-      { name: 'REST APIs', icon: Code2 },
-      { name: 'Authentication (JWT)', icon: Settings },
-      { name: 'Middleware & API Security', icon: Settings },
-    ],
-  },
-  {
-    name: 'Database',
-    techs: [
-      { name: 'MongoDB', icon: Database },
-      { name: 'Mongoose ODM', icon: Database },
-      { name: 'Firebase', icon: Zap },
-      { name: 'Supabase', icon: Database },
-      { name: 'SQL / MySQL', icon: Database },
-    ],
-  },
-  {
-    name: 'Tools & Workflow',
-    techs: [
-      { name: 'Git & GitHub', icon: Wrench },
-      { name: 'Vite', icon: Zap },
-      { name: 'Webpack', icon: Settings },
-      { name: 'Docker (Basics)', icon: Package },
-      { name: 'CI/CD Pipelines', icon: Code2 },
-      { name: 'Postman', icon: Settings },
-      { name: 'Vercel', icon: Layers },
-      { name: 'VS Code', icon: Code2 },
-      { name: 'Figma', icon: Wrench },
-    ],
-  },
-];
+const techCategories = TECH_CATEGORIES;
 
 const TechItem = ({ tech, index }: { tech: any; index: number }) => {
   const Icon = tech.icon;
