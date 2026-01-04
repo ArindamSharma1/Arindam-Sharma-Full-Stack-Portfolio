@@ -64,8 +64,8 @@ export default function CustomCursor() {
       style={{
         width: hovering ? "40px" : "18px",
         height: hovering ? "40px" : "18px",
-        backgroundColor: "#38BDF8",          // solid fill
-        border: "1.5px solid #7DD3FC",      // lighter border
+        backgroundColor: "#ff7849",          // tangerine
+        border: "1.5px solid #ff6b4a",       // tangerine hover
         borderRadius: "9999px",
         opacity: 0.9                         // subtle softness
       }}
