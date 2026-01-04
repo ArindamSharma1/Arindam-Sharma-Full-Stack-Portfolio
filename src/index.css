@@ -11,18 +11,25 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
-  background-color: white;
-  color: #0f172a;
+  background-color: #0f1115;
+  color: #eaeaf0;
 }
 
-/* Dark theme base */
+/* Enforce dark theme always */
+html,
 html.dark body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #0f1115;
+  color: #eaeaf0;
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-bold;
   }
 
@@ -45,25 +52,19 @@ html.dark body {
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 
-    dark:from-white dark:via-slate-200 dark:to-white 
-    bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-txt-primary via-secondary to-txt-primary bg-clip-text text-transparent;
   }
 
   .button-primary {
-    @apply px-8 py-3 bg-accent hover:bg-accent-dark text-white 
-    font-semibold rounded-lg transition-all duration-300 
-    transform hover:scale-105 active:scale-95;
+    @apply px-8 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95;
   }
 
   .button-ghost {
-    @apply px-6 py-2 text-slate-700 dark:text-slate-300 
-    hover:text-accent transition-colors duration-300;
+    @apply px-6 py-2 text-txt-secondary hover:text-accent transition-colors duration-300;
   }
 
   .nav-link {
-    @apply relative text-slate-700 dark:text-slate-300 
-    hover:text-accent transition-colors duration-300 text-sm font-medium;
+    @apply relative text-txt-secondary hover:text-accent transition-colors duration-300 text-sm font-medium;
   }
 
   .nav-link::after {
@@ -76,9 +77,7 @@ html.dark body {
   }
 
   .tech-icon {
-    @apply p-4 rounded-lg hover:shadow-lg transition-all duration-300 
-    transform hover:scale-110 
-    bg-slate-50 dark:bg-neutral-900;
+    @apply p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-110 bg-primary-surface;
   }
 
   .scroll-fade-in {
@@ -99,7 +98,7 @@ html.dark body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-100 dark:bg-black;
+  @apply bg-primary;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -107,7 +106,7 @@ html.dark body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-accent-dark;
+  @apply bg-accent-hover;
 }
 
 /* Hide default cursor */
@@ -116,6 +115,7 @@ html.dark body {
 } */
 
 /* Smooth theme transition */
-html, body {
+html,
+body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }

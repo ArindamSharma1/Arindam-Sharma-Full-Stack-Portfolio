@@ -102,15 +102,15 @@ const ProjectCard = ({
 			variants={containerVariants}
 			whileHover={{ y: -8 }}
 		>
-			<div className="relative rounded-xl overflow-hidden bg-slate-200 aspect-video shadow-lg">
+			<div className="relative rounded-xl overflow-hidden bg-primary-surface aspect-video shadow-lg">
 				<img
 					src={project.image}
 					alt={project.title}
 					className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 				/>
 
-				<div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 pt-8">
-					<p className="text-slate-200 text-sm mb-4 flex-shrink-0">
+				<div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 pt-8">
+					<p className="text-txt-secondary text-sm mb-4 flex-shrink-0">
 						{project.description}
 					</p>
 					<div className="flex items-center justify-between">
@@ -129,7 +129,7 @@ const ProjectCard = ({
 								href={project.demo}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="p-2 rounded-lg bg-accent hover:bg-accent-dark transition-colors"
+								className="p-2 rounded-lg bg-accent hover:bg-accent-hover transition-colors"
 								aria-label={`Open ${project.title} demo`}
 							>
 								<ExternalLink size={16} className="text-white" />
@@ -138,7 +138,7 @@ const ProjectCard = ({
 								href={project.repo}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="p-2 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors"
+								className="p-2 rounded-lg bg-secondary/80 hover:bg-secondary transition-colors"
 								aria-label={`Open ${project.title} repository`}
 							>
 								<Github size={16} className="text-white" />
@@ -149,14 +149,14 @@ const ProjectCard = ({
 			</div>
 
 			<div className="mt-4 space-y-2">
-				<h3 className="text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
+				<h3 className="text-lg font-bold text-txt-primary group-hover:text-accent transition-colors">
 					{project.title}
 				</h3>
 				<div className="flex flex-wrap gap-2">
 					{project.tech.map((tech) => (
 						<span
 							key={tech}
-							className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full"
+							className="px-3 py-1 bg-primary-surface text-txt-secondary text-xs font-semibold rounded-full"
 						>
 							{tech}
 						</span>
@@ -197,7 +197,7 @@ export const Projects = () => {
 		<section
 			id="projects"
 			data-section="projects"
-			className="section-padding bg-gradient-to-b from-white to-slate-50"
+			className="section-padding bg-primary"
 			ref={ref}
 		>
 			<div className="section-max-width">
@@ -208,7 +208,7 @@ export const Projects = () => {
 					animate={inView ? 'visible' : 'hidden'}
 				>
 					<motion.div variants={headerVariants}>
-						<h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4">
+						<h2 className="text-5xl md:text-6xl font-bold text-txt-primary mb-4">
 							Selected Projects
 						</h2>
 						<div className="w-24 h-1 bg-accent rounded-full"></div>

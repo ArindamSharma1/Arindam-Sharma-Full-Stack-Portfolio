@@ -30,9 +30,9 @@ export const Navigation = () => {
   return (
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 
-      bg-white/80 dark:bg-black/80 
+      bg-primary/90 
       backdrop-blur-md 
-      border-b border-slate-100 dark:border-white/10 
+      border-b border-primary-surface 
       transition-colors duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -43,7 +43,7 @@ export const Navigation = () => {
 
           {/* Logo */}
           <motion.div
-            className="text-2xl font-bold text-slate-900 dark:text-white"
+            className="text-2xl font-bold text-txt-primary"
             whileHover={{ scale: 1.05 }}
           >
             As.
@@ -55,11 +55,10 @@ export const Navigation = () => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`nav-link ${
-                  activeSection === item.id 
-                    ? 'active text-accent dark:text-accent' 
-                    : 'text-slate-700 dark:text-slate-300'
-                }`}
+                className={`nav-link ${activeSection === item.id
+                    ? 'active text-accent'
+                    : ''
+                  }`}
                 whileHover={{ y: -2 }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -79,7 +78,7 @@ export const Navigation = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-slate-700 dark:text-slate-300 hover:text-accent transition-colors"
+                  className="text-txt-secondary hover:text-accent transition-colors"
                   whileHover={{ scale: 1.2, rotate: 12 }}
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}

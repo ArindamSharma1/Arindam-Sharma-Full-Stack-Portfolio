@@ -52,7 +52,7 @@ export const About = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-txt-primary mb-4">
               About Me.
             </h2>
             <div className="w-24 h-1 bg-accent rounded-full"></div>
@@ -66,21 +66,21 @@ export const About = () => {
               animate={inView ? 'visible' : 'hidden'}
             >
               <motion.p
-                className="text-lg text-slate-600 leading-relaxed"
+                className="text-lg text-txt-secondary leading-relaxed"
                 variants={itemVariants}
               >
                 I’m passionate about building reliable, user-centric web applications that balance clean frontend experiences with well-structured backend systems. My approach focuses on clarity, performance, and scalability across the full stack.
               </motion.p>
 
               <motion.p
-                className="text-lg text-slate-600 leading-relaxed"
+                className="text-lg text-txt-secondary leading-relaxed"
                 variants={itemVariants}
               >
                 Whether I’m designing responsive React interfaces, developing RESTful APIs with Node and Express, or managing data with MongoDB, I pay close attention to structure, performance, and maintainability. I value clean, readable code that can scale and evolve over time.
               </motion.p>
 
               <motion.p
-                className="text-lg text-slate-600 leading-relaxed"
+                className="text-lg text-txt-secondary leading-relaxed"
                 variants={itemVariants}
               >
                 With a strong foundation in modern web technologies and a commitment to continuous learning, I keep improving my workflow and staying current with best practices to deliver practical, production-ready solutions.
@@ -96,14 +96,14 @@ export const About = () => {
               {features.map((feature, index) => (
                 <motion.div
                   key={feature}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-slate-50 hover:bg-accent/5 transition-colors"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-primary-surface hover:bg-secondary/10 transition-colors"
                   variants={itemVariants}
                   whileHover={{ x: 8 }}
                 >
                   <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
                     <Check size={16} className="text-white" />
                   </div>
-                  <span className="text-slate-700 font-medium">{feature}</span>
+                  <span className="text-txt-primary font-medium">{feature}</span>
                 </motion.div>
               ))}
             </motion.div>

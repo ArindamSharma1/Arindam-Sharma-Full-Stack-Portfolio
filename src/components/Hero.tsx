@@ -54,7 +54,7 @@ const StatCard = ({ end, label }: { end: number; label: string }) => {
         {label === 'Completed Projects' && '+'}
         {label === 'Years of Experience' && '+'}
       </div>
-      <p className="text-slate-600 text-sm md:text-base mt-2">{label}</p>
+      <p className="text-txt-secondary text-sm md:text-base mt-2">{label}</p>
     </motion.div>
   );
 };
@@ -75,10 +75,10 @@ export const Hero = () => {
         >
           <div className="space-y-4">
             <motion.div
-              className="inline-block px-4 py-2 bg-accent/10 rounded-full"
+              className="inline-block px-4 py-2 bg-secondary/10 rounded-full"
               variants={itemVariants}
             >
-              <span className="text-accent text-sm font-semibold">Welcome to my portfolio</span>
+              <span className="text-secondary text-sm font-semibold">Welcome to my portfolio</span>
             </motion.div>
 
             <motion.h1
@@ -89,7 +89,7 @@ export const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed"
+              className="text-lg md:text-xl text-txt-secondary max-w-2xl leading-relaxed"
               variants={itemVariants}
             >
               Hi! My name is Arindam Sharma and I’m a MERN Stack Developer with experience building scalable, performance-driven web applications. I focus on creating clean, responsive interfaces with React while designing reliable backend systems using Node.js, Express, and MongoDB.

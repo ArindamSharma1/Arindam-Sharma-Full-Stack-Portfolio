@@ -33,7 +33,7 @@ export const Footer = () => {
 
   return (
     <footer
-      className="bg-slate-900 text-white section-padding"
+      className="bg-primary-surface text-txt-primary section-padding"
       ref={ref}
     >
       <div className="section-max-width">
@@ -46,7 +46,7 @@ export const Footer = () => {
           <div className="grid md:grid-cols-3 gap-12">
             <motion.div className="space-y-4" variants={itemVariants}>
               <h3 className="text-2xl font-bold">Arindam.</h3>
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-txt-secondary leading-relaxed">
                 Crafting beautiful digital experiences through clean code and thoughtful design.
               </p>
             </motion.div>
@@ -59,7 +59,7 @@ export const Footer = () => {
                     <li key={link}>
                       <a
                         href={`#${link.toLowerCase().replace(' ', '-')}`}
-                        className="text-slate-400 hover:text-accent transition-colors"
+                        className="text-txt-secondary hover:text-accent transition-colors"
                       >
                         {link}
                       </a>
@@ -79,7 +79,7 @@ export const Footer = () => {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="p-3 rounded-lg bg-slate-800 text-slate-300 hover:bg-accent hover:text-white transition-all"
+                      className="p-3 rounded-lg bg-secondary/10 text-secondary hover:bg-accent hover:text-white transition-all"
                       whileHover={{ scale: 1.15, rotate: 12 }}
                     >
                       <Icon size={20} />
@@ -91,7 +91,7 @@ export const Footer = () => {
           </div>
 
           <motion.div
-            className="pt-8 border-t border-slate-700 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-400 text-sm"
+            className="pt-8 border-t border-primary/20 flex flex-col md:flex-row items-center justify-between gap-4 text-txt-secondary text-sm"
             variants={itemVariants}
           >
             <div className="flex items-center gap-2">

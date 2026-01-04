@@ -68,7 +68,7 @@ export const Contact = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-txt-primary mb-4">
               Get In Touch
             </h2>
             <div className="w-24 h-1 bg-accent rounded-full"></div>
@@ -77,16 +77,16 @@ export const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div className="space-y-8" variants={containerVariants}>
               <motion.div
-                className="p-6 rounded-lg bg-slate-50 border border-slate-200 hover:border-accent/30 transition-colors"
+                className="p-6 rounded-lg bg-primary-surface border border-secondary/10 hover:border-accent/30 transition-colors"
                 variants={itemVariants}
                 whileHover={{ x: 8 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-accent/10 mt-1">
-                    <Mail size={20} className="text-accent" />
+                  <div className="p-3 rounded-lg bg-secondary/10 mt-1">
+                    <Mail size={20} className="text-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">Email</h3>
+                    <h3 className="text-lg font-bold text-txt-primary">Email</h3>
                     <a
                       href="mailto:sharmaarindam091@gmail.com"
                       className="text-accent hover:text-accent-dark transition-colors mt-1"
@@ -103,11 +103,11 @@ export const Contact = () => {
                 whileHover={{ x: 8 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-accent/10 mt-1">
-                    <Phone size={20} className="text-accent" />
+                  <div className="p-3 rounded-lg bg-secondary/10 mt-1">
+                    <Phone size={20} className="text-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">Phone</h3>
+                    <h3 className="text-lg font-bold text-txt-primary">Phone</h3>
                     <a
                       href="tel:+1234567890"
                       className="text-accent hover:text-accent-dark transition-colors mt-1"
@@ -124,12 +124,12 @@ export const Contact = () => {
                 whileHover={{ x: 8 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-accent/10 mt-1">
-                    <MapPin size={20} className="text-accent" />
+                  <div className="p-3 rounded-lg bg-secondary/10 mt-1">
+                    <MapPin size={20} className="text-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">Location</h3>
-                    <p className="text-slate-600 mt-1">
+                    <h3 className="text-lg font-bold text-txt-primary">Location</h3>
+                    <p className="text-txt-secondary mt-1">
                       India
                     </p>
                   </div>
@@ -145,7 +145,7 @@ export const Contact = () => {
               <motion.div variants={itemVariants}>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-semibold text-slate-900 mb-2"
+                  className="block text-sm font-semibold text-txt-primary mb-2"
                 >
                   Full Name
                 </label>
@@ -156,7 +156,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all placeholder:text-txt-secondary/50"
                   required
                 />
               </motion.div>
@@ -194,7 +194,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your message here..."
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all resize-none placeholder:text-txt-secondary/50"
                   required
                 ></textarea>
               </motion.div>
@@ -216,7 +216,7 @@ export const Contact = () => {
 
               {submitted && (
                 <motion.div
-                  className="p-4 rounded-lg bg-accent/10 border border-accent text-accent text-center font-semibold"
+                  className="p-4 rounded-lg bg-secondary/10 border border-secondary text-secondary text-center font-semibold"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                 >

@@ -13,7 +13,6 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import CustomCursor from "./components/CustomCursor";
 // import { ScrollToTop } from './components/ScrollToTop';
-// import ThemeToggle from './components/ThemeToggle'
 
 function App() {
   useEffect(() => {
@@ -42,8 +41,7 @@ function App() {
 
   return (
 
-    <div className="bg-white text-slate-900 overflow-x-hidden">
-      {/* <ThemeToggle /> */}
+    <div className="bg-primary text-txt-primary overflow-x-hidden">
       <CustomCursor />
       <Navigation />
       <ProgressBar />
