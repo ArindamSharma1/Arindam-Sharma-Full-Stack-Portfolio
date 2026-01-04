@@ -16,7 +16,6 @@ body {
   @apply text-[0.95rem] leading-relaxed;
 }
 
-/* Enforce dark theme always */
 html,
 html.dark body {
   background-color: #0f1115;

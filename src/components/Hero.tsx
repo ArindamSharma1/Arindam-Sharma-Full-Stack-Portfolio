@@ -64,11 +64,11 @@ export const Hero = () => {
     <section
       id="home"
       data-section="home"
-      className="pt-32 pb-20 min-h-screen flex items-center relative"
+      className="pt-24 pb-20 min-h-screen flex items-start relative"
     >
       <div className="section-max-width w-full section-padding relative z-10">
         <motion.div
-          className="space-y-16"
+          className="space-y-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -109,7 +109,7 @@ export const Hero = () => {
           </div>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 gap-12 pt-12 border-t border-primary-surface/30 w-full md:w-fit"
+            className="grid grid-cols-2 md:grid-cols-3 gap-12 pt-8 border-t border-primary-surface/30 w-full md:w-fit"
             variants={containerVariants}
           >
             {HERO_STATS.map((stat) => (
