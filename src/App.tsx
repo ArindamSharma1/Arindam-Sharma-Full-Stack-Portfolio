@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { Navigation } from './components/Navigation';
 import { ProgressBar } from './components/ProgressBar';
-import { SideContact } from './components/SideContact';
+
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { TechStack } from './components/TechStack';
@@ -45,7 +45,7 @@ function App() {
       <CustomCursor />
       <Navigation />
       <ProgressBar />
-      <SideContact />
+
 
       <Hero />
       <About />

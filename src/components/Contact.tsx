@@ -53,6 +53,15 @@ export const Contact = () => {
     },
   };
 
+  const headerVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
     <section
       id="contact"
@@ -67,11 +76,13 @@ export const Contact = () => {
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-          <motion.div variants={itemVariants}>
-            <h2 className="text-5xl md:text-6xl font-bold text-txt-primary mb-4">
+          <motion.div variants={headerVariants} className="max-w-xl pl-6 border-l-2 border-accent relative">
+            <h2 className="text-4xl md:text-5xl font-bold text-txt-primary mb-2">
               Get In Touch
             </h2>
-            <div className="w-24 h-1 bg-accent rounded-full"></div>
+            <p className="text-txt-secondary text-lg">
+              Have a project in mind? Let's talk.
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12">

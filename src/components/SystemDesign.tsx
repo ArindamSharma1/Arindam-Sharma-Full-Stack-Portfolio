@@ -74,15 +74,14 @@ export const SystemDesign = () => {
                     initial="hidden"
                     animate={inView ? 'visible' : 'hidden'}
                 >
-                    <motion.div variants={headerVariants} className="space-y-4">
+                    <motion.div variants={headerVariants} className="max-w-3xl pl-6 border-l-2 border-accent relative space-y-4">
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-txt-primary mb-4">
+                            <h2 className="text-4xl md:text-5xl font-bold text-txt-primary mb-2">
                                 System Design & Security
                             </h2>
-                            <div className="w-24 h-1 bg-accent rounded-full"></div>
                         </div>
-                        <p className="text-lg text-txt-secondary max-w-3xl leading-relaxed">
-                            Architected and implemented a secure, production-grade systems. Designed to ensure data integrity, prevent abuse, and scale independently of frontend logic.
+                        <p className="text-lg text-txt-secondary leading-relaxed">
+                            Architecting secure, production-grade systems that scale.
                         </p>
                     </motion.div>
 

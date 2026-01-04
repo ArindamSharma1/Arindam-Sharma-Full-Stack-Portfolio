@@ -32,10 +32,19 @@ export const Experience = () => {
         },
     };
 
+    const headerVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 0.6 },
+        },
+    };
+
     return (
         <section
             id="experience"
-            data-section="experience"
+            data- section="experience"
             className="section-padding"
             ref={ref}
         >
@@ -46,11 +55,13 @@ export const Experience = () => {
                     initial="hidden"
                     animate={inView ? 'visible' : 'hidden'}
                 >
-                    <motion.div variants={itemVariants}>
-                        <h2 className="text-5xl md:text-6xl font-bold text-txt-primary mb-4">
+                    <motion.div variants={headerVariants} className="max-w-xl pl-6 border-l-2 border-accent relative">
+                        <h2 className="text-4xl md:text-5xl font-bold text-txt-primary mb-2">
                             Experience
                         </h2>
-                        <div className="w-24 h-1 bg-accent rounded-full"></div>
+                        <p className="text-txt-secondary text-lg">
+                            My professional journey.
+                        </p>
                     </motion.div>
 
                     <div className="space-y-6">
@@ -107,6 +118,6 @@ export const Experience = () => {
                     </div>
                 </motion.div>
             </div>
-        </section>
+        </section >
     );
 };
