@@ -127,7 +127,7 @@ export const PROJECTS = [
 export const EXPERIENCES = [
     {
         company: 'ApexPlanet Technologies',
-        role: 'Frontend Developer Intern',
+        role: 'Web Developer Intern',
         duration: 'June 2025 - July 2025',
         description: 'Engineered high-performance web modules. Reduced load times by optimizing bundle sizes and implementing lazy loading strategies.',
         skills: ['React', 'Next.js', 'Typescript', 'Optimization'],
@@ -150,32 +150,38 @@ export const EXPERIENCES = [
 
 export const TECH_CATEGORIES = [
     {
-        name: 'Build Interfaces With',
+        name: 'Frontend Ecosystem',
         techs: [
             { name: 'React', icon: Zap },
             { name: 'Next.js', icon: Layers },
+            { name: 'Angular', icon: Layout },
             { name: 'TypeScript', icon: Code2 },
             { name: 'Tailwind CSS', icon: Wrench },
             { name: 'Framer Motion', icon: Activity },
+            { name: 'React Native', icon: Smartphone },
         ],
     },
     {
-        name: 'Backends I Ship',
+        name: 'Backend & Infrastructure',
         techs: [
             { name: 'Node.js', icon: Server },
+            { name: 'Medusa.js', icon: Package },
             { name: 'Express', icon: Server },
             { name: 'Supabase', icon: Database },
             { name: 'PostgreSQL', icon: Database },
+            { name: 'MongoDB', icon: Database },
             { name: 'FastAPI', icon: Zap },
         ],
     },
     {
-        name: 'Motion/Design Tools',
+        name: 'DevOps & Tools',
         techs: [
-            { name: 'Figma', icon: Wrench },
-            { name: 'Git & CI/CD', icon: Settings },
-            { name: 'Vercel', icon: Globe },
             { name: 'Docker', icon: Package },
+            { name: 'AWS', icon: Server },
+            { name: 'Figma', icon: Wrench },
+            { name: 'Git & GitHub', icon: Settings },
+            { name: 'Vercel', icon: Globe },
+            { name: 'CI/CD Pipelines', icon: Settings },
         ],
     },
 ];
