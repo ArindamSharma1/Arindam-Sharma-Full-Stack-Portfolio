@@ -184,7 +184,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all placeholder:text-txt-secondary/50"
+                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all placeholder:text-txt-secondary/50 relative z-10"
                   required
                 />
               </motion.div>
@@ -203,7 +203,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all placeholder:text-txt-secondary/50"
+                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all placeholder:text-txt-secondary/50 relative z-10"
                   required
                 />
               </motion.div>
@@ -222,7 +222,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your message here..."
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all resize-none placeholder:text-txt-secondary/50"
+                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all resize-none placeholder:text-txt-secondary/50 relative z-10"
                   required
                 ></textarea>
               </motion.div>
