@@ -52,20 +52,31 @@ export const Navigation = () => {
           {/* Nav links */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
-              <motion.button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`nav-link ${activeSection === item.id
-                    ? 'active text-accent'
-                    : ''
-                  }`}
-                whileHover={{ y: -2 }}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {item.label}
-              </motion.button>
+              <div key={item.id} className="relative group">
+                <motion.button
+                  onClick={() => scrollToSection(item.id)}
+                  className={`nav-link relative z-10 ${activeSection === item.id
+                    ? 'text-accent'
+                    : 'text-txt-secondary hover:text-accent'
+                    }`}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {item.label}
+                  {/* Hover Underline (only when not active) */}
+                  {activeSection !== item.id && (
+                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-accent/50 transition-all duration-300 group-hover:w-full" />
+                  )}
+                </motion.button>
+                {activeSection === item.id && (
+                  <motion.div
+                    layoutId="active-nav-underline"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </div>
             ))}
           </div>
 

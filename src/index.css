@@ -64,17 +64,9 @@ html.dark body {
   }
 
   .nav-link {
-    @apply relative text-txt-secondary hover:text-accent transition-colors duration-300 text-sm font-medium;
+    @apply relative text-sm font-medium transition-colors duration-300;
   }
 
-  .nav-link::after {
-    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
-  }
-
-  .nav-link.active::after,
-  .nav-link:hover::after {
-    @apply w-full;
-  }
 
   .tech-icon {
     @apply p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-110 bg-primary-surface;

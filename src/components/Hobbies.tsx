@@ -56,8 +56,8 @@ export const Hobbies = () => {
                         {/* 1. UI/UX Design (Large: 2x1) */}
                         <motion.div variants={itemVariants} className="md:col-span-2 h-[300px]">
                             <HoverCard
-                                title="UI/UX Design"
-                                subtitle="Translating complex logic into intuitive interfaces."
+                                title="UI & UX Design"
+                                subtitle="Designing clean interfaces with usability in mind. I focus on layout, spacing, accessibility, and flow before writing code."
                                 icon={Figma}
                                 image="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2670&auto=format&fit=crop"
                                 className="h-full"
@@ -68,9 +68,9 @@ export const Hobbies = () => {
                         <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-2 h-[300px] md:h-full">
                             <HoverCard
                                 title="Video Editing"
-                                subtitle="Visual storytelling, pacing, and motion graphics."
+                                subtitle="Experience editing short-form and long-form content. Strong sense of timing, storytelling, and visual pacing."
                                 icon={Film}
-                                image="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?q=80&w=2670&auto=format&fit=crop"
+                                image="https://images.unsplash.com/photo-1535016120720-40c6874c3b1c?auto=format&fit=crop&q=80&w=2670"
                                 className="h-full"
                             />
                         </motion.div>
@@ -78,8 +78,8 @@ export const Hobbies = () => {
                         {/* 3. Gaming (Standard: 1x1) */}
                         <motion.div variants={itemVariants} className="md:col-span-1 h-[300px]">
                             <HoverCard
-                                title="Competitive Gaming"
-                                subtitle="Strategic thinking under pressure."
+                                title="Gaming & Systems Thinking"
+                                subtitle="Enjoy competitive and strategy-based games. Builds instincts around systems, feedback loops, and user engagement."
                                 icon={Gamepad2}
                                 image="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop"
                                 className="h-full"
@@ -89,10 +89,10 @@ export const Hobbies = () => {
                         {/* 4. Graphic Design (Standard: 1x1) */}
                         <motion.div variants={itemVariants} className="md:col-span-1 h-[300px]">
                             <HoverCard
-                                title="Graphic Design"
-                                subtitle="Composition, color theory, and branding."
+                                title="Visual Design"
+                                subtitle="Comfortable working with graphics, layouts, and branding assets to support product identity and consistency."
                                 icon={Palette}
-                                image="https://images.unsplash.com/photo-1626785774573-4b7993143d2d?q=80&w=2670&auto=format&fit=crop"
+                                image="https://images.unsplash.com/photo-1626785774573-4b7993143d2d?auto=format&fit=crop&q=80&w=2670"
                                 className="h-full"
                             />
                         </motion.div>
