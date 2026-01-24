@@ -70,7 +70,7 @@ export const Hobbies = () => {
                                 title="Video Editing"
                                 subtitle="Experience editing short-form and long-form content. Strong sense of timing, storytelling, and visual pacing."
                                 icon={Film}
-                                image="https://images.unsplash.com/photo-1535016120720-40c6874c3b1c?auto=format&fit=crop&q=80&w=2670"
+                                image="https://images.pexels.com/photos/31718971/pexels-photo-31718971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                                 className="h-full"
                             />
                         </motion.div>
@@ -92,7 +92,7 @@ export const Hobbies = () => {
                                 title="Visual Design"
                                 subtitle="Comfortable working with graphics, layouts, and branding assets to support product identity and consistency."
                                 icon={Palette}
-                                image="https://images.unsplash.com/photo-1626785774573-4b7993143d2d?auto=format&fit=crop&q=80&w=2670"
+                                image="https://images.pexels.com/photos/12760383/pexels-photo-12760383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                                 className="h-full"
                             />
                         </motion.div>
