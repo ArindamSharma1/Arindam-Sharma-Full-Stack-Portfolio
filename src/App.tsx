@@ -11,6 +11,7 @@ const TechStack = lazy(() => import('./components/TechStack').then(module => ({ 
 const Experience = lazy(() => import('./components/Experience').then(module => ({ default: module.Experience })));
 const Projects = lazy(() => import('./components/Projects').then(module => ({ default: module.Projects })));
 const SystemDesign = lazy(() => import('./components/SystemDesign').then(module => ({ default: module.SystemDesign })));
+const Hobbies = lazy(() => import('./components/Hobbies').then(module => ({ default: module.Hobbies })));
 const Contact = lazy(() => import('./components/Contact').then(module => ({ default: module.Contact })));
 const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
 const ScrollToTop = lazy(() => import('./components/ScrollToTop').then(module => ({ default: module.ScrollToTop })));
@@ -31,6 +32,7 @@ function App() {
           <Experience />
           <Projects />
           <SystemDesign />
+          <Hobbies />
           <Contact />
           <Footer />
           <ScrollToTop />
