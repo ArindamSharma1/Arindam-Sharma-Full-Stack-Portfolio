@@ -1,7 +1,8 @@
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin, Send, AlignLeftIcon } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const { ref, inView } = useInView({
@@ -9,13 +10,14 @@ export const Contact = () => {
     triggerOnce: true,
   });
 
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,13 +26,27 @@ export const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
+    if (!formRef.current) return;
+
+    setStatus('sending');
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   const containerVariants = {
@@ -99,7 +115,7 @@ export const Contact = () => {
                   <div>
                     <h3 className="text-lg font-bold text-txt-primary">Email</h3>
                     <a
-                      href="mailto:sharmaarindam091@gmail.com"
+                      href={`mailto:sharmaarindam091@gmail.com`}
                       className="text-accent hover:text-accent-dark transition-colors mt-1"
                     >
                       sharmaarindam091@gmail.com
@@ -120,7 +136,7 @@ export const Contact = () => {
                   <div>
                     <h3 className="text-lg font-bold text-txt-primary">Phone</h3>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+918580705992"
                       className="text-accent hover:text-accent-hover transition-colors mt-1"
                     >
                       +91 8580705992
@@ -149,21 +165,22 @@ export const Contact = () => {
             </motion.div>
 
             <motion.form
+              ref={formRef}
               className="space-y-6"
               variants={containerVariants}
               onSubmit={handleSubmit}
             >
               <motion.div variants={itemVariants}>
                 <label
-                  htmlFor="name"
+                  htmlFor="user_name"
                   className="block text-sm font-semibold text-txt-primary mb-2"
                 >
                   Full Name
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
+                  id="user_name"
+                  name="user_name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
@@ -174,15 +191,15 @@ export const Contact = () => {
 
               <motion.div variants={itemVariants}>
                 <label
-                  htmlFor="email"
+                  htmlFor="user_email"
                   className="block text-sm font-semibold text-txt-primary mb-2"
                 >
                   Email Address
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
+                  id="user_email"
+                  name="user_email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
@@ -212,26 +229,36 @@ export const Contact = () => {
 
               <motion.button
                 type="submit"
-                className="button-primary flex items-center gap-2 group w-full justify-center"
+                disabled={status === 'sending'}
+                className="button-primary flex items-center gap-2 group w-full justify-center disabled:opacity-70 disabled:cursor-not-allowed"
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {submitted ? 'Message Sent!' : 'Send Message'}
+                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : status === 'error' ? 'Failed to Send' : 'Send Message'}
                 <Send
                   size={20}
-                  className={`group-hover:translate-x-1 transition-transform ${submitted ? 'hidden' : ''
+                  className={`group-hover:translate-x-1 transition-transform ${status !== 'idle' ? 'hidden' : ''
                     }`}
                 />
               </motion.button>
 
-              {submitted && (
+              {status === 'success' && (
                 <motion.div
-                  className="p-4 rounded-lg bg-secondary/10 border border-secondary text-secondary text-center font-semibold"
+                  className="p-4 rounded-lg bg-secondary/10 border border-green-500/50 text-green-400 text-center font-semibold"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
                   Thank you! I'll get back to you soon.
+                </motion.div>
+              )}
+              {status === 'error' && (
+                <motion.div
+                  className="p-4 rounded-lg bg-red-500/10 border border-red-500/50 text-red-400 text-center font-semibold"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  Something went wrong. Please try again later.
                 </motion.div>
               )}
             </motion.form>
@@ -244,9 +271,6 @@ export const Contact = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           {/*centered logo/link */}
-          {/* <a href="https://arindamsharma.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-            <img src="./src/images/A-Logo.png" alt="Arindam Logo" className="w-6 h-6" />
-          </a> */}
         </motion.div>
       </div>
     </section>
