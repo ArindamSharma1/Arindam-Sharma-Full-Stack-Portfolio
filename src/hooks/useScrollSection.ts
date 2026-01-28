@@ -18,11 +18,26 @@ export const useScrollSection = () => {
       threshold: 0,
     });
 
-    const sections = document.querySelectorAll('[data-section]');
-    sections.forEach(section => observerRef.current?.observe(section));
+    const observeSections = () => {
+      const sections = document.querySelectorAll('[data-section]');
+      sections.forEach(section => observerRef.current?.observe(section));
+    };
+
+    observeSections();
+
+    // Watch for DOM changes (lazy loaded sections)
+    const mutationObserver = new MutationObserver(() => {
+      observeSections();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
       observerRef.current?.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 
