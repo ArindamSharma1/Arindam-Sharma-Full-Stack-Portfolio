@@ -14,7 +14,8 @@ export const useScrollSection = () => {
     };
 
     observerRef.current = new IntersectionObserver(handleIntersection, {
-      threshold: 0.3,
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0,
     });
 
     const sections = document.querySelectorAll('[data-section]');
